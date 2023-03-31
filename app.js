@@ -46,9 +46,9 @@ class Employee {
 
 class Programmer extends Employee {
   #lang;
-  constructor() {
+  constructor(lang) {
     super();
-    this.#lang = prompt("Input languages quantity:") || "no lang";
+    this.#lang = lang || "no lang";
   }
 
   get salary() {
@@ -68,8 +68,7 @@ class Programmer extends Employee {
   }
 }
 
-const rst = new Programmer();
-
+const rst = new Programmer(2);
 console.group(rst.name);
 console.log("Age: ", rst.age);
 console.log("Languages: ", rst.lang);
@@ -87,3 +86,6 @@ ol.salary = 10000;
 
 console.log(rst);
 console.log(ol);
+
+const john = new Programmer(3);
+console.log(john);
